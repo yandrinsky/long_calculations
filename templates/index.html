@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name='viewport' content='width=device-width'>
+	<title>Document</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/fast.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+
+</head>
+<body>
+{% block body %}
+
+<div class="dark hide"></div>
+<div class="smth_went_wrong pop_up hide">
+	<div class="smth_went_wrong__inner">
+		<div class="winni_wrong__img">
+			<img src="{{ url_for('static', filename='img/Vinni.png') }}" alt="" class="winni_wrong">
+		</div>
+		<h2 class="smth_went_wrong__title">Ой...</h2>
+		<div class="smth_went_wrong__text">
+			<h3>Что-то пошло не так...</h3>
+			<p>И мы не знаем, что именно.</p>
+			<p>Может быть, вы ввели некорректные данные. А может быть и нет...</p>
+			<p>У нас нет классификации возвращаемых ошибок.</p>
+			<p>Попытайтесь еще раз.</p>
+			<button id="try_again" class="pop_up_button">Попытаться</button>
+		</div>
+	</div>
+
+</div>
+<div class="gen_window pop_up hide">
+	<div class="gen_krol">
+		<img src="{{ url_for('static', filename='img/krol.png') }}" alt="" class="gen_krol_img">
+	</div>
+	<h2 class="gen_title">
+		Генерация чисел / многочленов
+	</h2>
+	<div class="gen_input_title">
+		Длина:
+	</div>
+
+	<input type="text" class="input_field gen_input_field">
+	<div class="gen_input_title">
+		Знак:
+	</div>
+	<input type="radio" name="sign" value="0" checked id="plusSign" >
+	<label for="plusSign" class="gen_label">+</label>
+	<div class="gen_sep"></div>
+	<input type="radio" name="sign" value="1" id="minusSign" >
+	<label for="minusSign" class="gen_label minusSign_label">-</label>
+	<div class="gen_sep"></div>
+	<input type="radio" name="sign" value="2" id="randomSign" >
+	<label for="randomSign" class="gen_label randomSign_label">+/-</label>
+	<div class="gen_sep"></div>
+	<button class="gen_btn pop_up_button" id="gen_gen">Сгенерировать</button>
+	<button class="gen_btn pop_up_button" id="gen_close">Отмена</button>
+</div>
+<div class="result_window pop_up hide">
+	<div class="result_pyata4ok">
+		<img src="{{ url_for('static', filename='img/pyata4ok.png') }}" alt="" class="result_img">
+	</div>
+	<h2 class="result_title">
+		Результат
+	</h2>
+
+	<div class="result_field">
+
+	</div>
+	<div class="pop_up_button result_button">Ок</div>
+
+</div>
+<header>
+	<div class="header">
+		<div class="header_logo">
+			<div class="header_logo__title">Нора Винни</div>
+			<a href="https://www.google.com/search?q=%D0%92%D0%B8%D0%BD%D0%BD
+			%D0%B8+%D0%BF%D1%83%D1%85&oq=%D0%92%D0%B8%D0%BD%D0%BD%D0%B8+%D0%BF%D1%83%D1%85&aqs=chrome..69i57j35i39j
+			46i433j0j0i20i263j0i433j46j0l3.3378j0j1&sourceid=chrome&ie=UTF-8" target="_blank">
+				<img src="https://sun9-31.userapi.com/impg/748NbFkeBClvIT5GbvS0j113BTnb7YlUuVgKKA/v9H_U7mzyeY.jpg?s
+				ize=200x0&quality=96&crop=0,0,984,984&sign=0dfe748d2e6ab09cafccd7700ac425de&ava=1" alt="" class="header_logo__img">
+			</a>
+
+		</div>
+		
+		<nav class="menu">
+			<ul>
+				<li>О нас</li>
+				<li>О проекте</li>
+				<li>Правила</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<section class="description">
+	<div class="background_video">
+		<div class="background_video_mask"></div>
+		<video src="{{ url_for('static', filename='video/vinni.mp4') }}" class="background_video__media" autoplay muted loop></video>
+	</div>
+	<div class="container">
+		<div class="description__content">
+			<h1 class="description__title">
+				Длинная арифметика
+			</h1>
+			<div class="description__text">
+				<h2>Наша программа - возможность рaботать с длинными числами</h2>
+			</div>
+		</div>
+
+	</div>
+
+
+
+</section>
+<section id="app">
+	<div class="container">
+		<div class="option">
+			<h2 class="option_title">
+				Выберите функцию
+			</h2>
+			<div class="select_wrapper">
+				<select id="option_select">
+
+				</select>
+			</div>
+
+		</div>
+		<div class="input_data" >
+			<div class="input_element_number" data-type="N">
+					<div class="input_element__auxiliary">
+						<div class="input_element_title">
+							Число 1
+						</div>
+						<div class="input_element_gen">
+							G
+						</div>
+						<div class="input_element_clear">x</div>
+					</div>
+					<input type="text" class="input_field">
+			</div>
+			<div class="input_element_number">
+				<div class="input_element__auxiliary">
+					<div class="input_element_title">
+						Число 1
+					</div>
+					<div class="input_element_gen">
+						G
+					</div>
+					<div class="input_element_clear">x</div>
+				</div>
+				<input type="text" class="input_field">
+			</div>
+		</div>
+
+		<div class="send_wrapper">
+			<div class="loading hide">
+
+			</div>
+			<button class="app_send_btn pop_up_button">Посчитать</button>
+		</div>
+	</div>
+
+</section>
+
+{% endblock %}
+<script src="{{ url_for('static', filename='js/fast.js') }}"></script>
+<script src="{{ url_for('static', filename='js/test.js') }}"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/server.js') }}"></script>
+<script src="{{ url_for('static', filename='js/eventListenerts.js') }}"></script>
+
+</body>
+</html>
